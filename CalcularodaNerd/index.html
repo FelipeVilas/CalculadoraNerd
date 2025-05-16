@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-br" class="h-100">
+
+<head>
+  <script src="assets/js/color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculadora feita para Calcular o preços dos drops/plantações de cada Rank">
+  <meta name="author" content="FelipeVilas">
+  <title>NerdZone Calc - Calculadora</title>
+
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/calc.css" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100">
+
+  <div class="calc-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Calculadora</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Calculadora</a>
+          <a class="nav-link fw-bold py-1 px-0" href= "#"/*href="bau.html"*/>Em breve</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Em breve</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <h1 class="text-center">Calcule o Item</h1>
+      <div class="card">
+        <div class="card-body">
+          <form id="calculadoraForm">
+            <div class="row">
+              <!-- Rank -->
+              <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="rank" class="form-label">Rank:</label>
+                  <select class="form-select" id="rank" aria-label="Select Rank">
+                    <option selected disabled>Selecione o Rank</option>
+                    <option value="Porco">Porco</option>
+                    <option value="Ovelha">Ovelha</option>
+                    <option value="Vaca">Vaca</option>
+                    <option value="Galinha">Galinha</option>
+                    <option value="Coelho">Coelho</option>
+                    <option value="Jaguatirica">Jaguatirica</option>
+                    <option value="Lobo">Lobo</option>
+                    <option value="Zumbi">Zumbi</option>
+                    <option value="Aranha">Aranha</option>
+                    <option value="Esqueleto">Esqueleto</option>
+                    <option value="Creeper">Creeper</option>
+                    <option value="Guardian">Guardian</option>
+                    <option value="Golem">Golem</option>
+                    <option value="Blaze">Blaze</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Level -->
+              <div class="col-md-4">
+                <div class="mb-3">
+                  <label for="ranklevel" class="form-label">Rank Level:</label>
+                  <select class="form-select" id="ranklevel" aria-label="Select Level" disabled>
+                    <option selected disabled>Selecione o Level</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="col-md-4">
+                <div class="mb-4">
+                  <label for="item" class="form-label">Item:</label>
+                  <select class="form-select" id="item" aria-label="Select Item">
+                    <option selected disabled>Selecione o Item</option>
+                    <optgroup label="Minérios">
+                      <option value="121600">Quartzo</option>
+                      <option value="197600">Obsidian</option>
+                      <option value="1824000">TNT</option>
+                    </optgroup>
+
+                    <optgroup label="Plantações">
+                      <option value="31860">Cacau</option>
+                      <option value="211585">Cacto</option>
+                      <option value="167930">Cenoura</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Booster de vendas -->
+              <div class="col-md-6">
+                <div class="mb-4">
+                  <label for="boostervenda" class="form-label">Booster de Vendas:</label>
+                  <select class="form-select" id="boostervenda" aria-label="Select Booster">
+                    <option selected disabled>Selecione o Booster</option>
+                    <option value="1.2">Booster 20%</option>
+                    <option value="1.25">Booster 25%</option>
+                    <option value="1.3">Booster 30%</option>
+                    <option value="1.35">Booster 35%</option>
+                    <option value="1.4">Booster 40%</option>
+                    <option value="1.45">Booster 45%</option>
+                    <option value="1.5">Booster 50%</option>
+                    <option value="1.55">Booster 55%</option>
+                    <option value="1.6">Booster 60%</option>
+                    <option value="1.65">Booster 65%</option>
+                    <option value="1.7">Booster 70%</option>
+                    <option value="1.75">Booster 75%</option>
+                    <option value="1.8">Booster 80%</option>
+                    <option value="1.85">Booster 85%</option>
+                    <option value="1.90">Booster 90%</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Booster de Mineração -->
+              <div class="col-md-6">
+                <div class="mb-4">
+                  <label for="boostermina" class="form-label">Booster de Mineração:</label>
+                  <select class="form-select" id="boostermina" aria-label="Select Booster">
+                    <option selected disabled>Selecione o Booster</option>
+                    <option value="1.20">Booster 20% (Level 1800)</option>
+                    <option value="1.30">Booster 30% (Level 5000)</option>
+                    <option value="1.45">Booster 45% (Level 8000)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+              <!-- Set 2.2x (SUPREMA) -->
+
+            <div class="col-md-10 border rounded-3 mx-auto">
+              <div class="row">
+                <!-- Primeira coluna: Capacete e Peitoral -->
+                <div class="col-md-5">
+                  <!-- Capacete -->
+                  <div class="form-check form-switch m-4 ">
+                    <input id="capa22" name="capa22" class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="capa22">Capacete: </label>
+                    <input class="mult form-control-sm" type="number" name="capacete" id="capacete" placeholder="1x" value="2.2" min="1" step="0.1">
+                  </div>
+                  
+                  <!-- Peitoral -->
+                  <div class="form-check form-switch ms-4">
+                    <input id="peito24" name="peito24" class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="peito24">Peitoral: </label>
+                    <input class="mult form-control-sm" type="number" name="peitoral" id="peitoral" placeholder="1x" value="2.4" min="1" step="0.1">
+                  </div>
+                </div>
+                
+                <!-- Segunda coluna: Calça e Bota -->
+                <div class="col-md-6">
+                  <!-- Calça -->
+                  <div class="form-check form-switch m-4">
+                    <input id="calca22" name="calca22" class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="calca22">Calça: </label>
+                    <input class="mult form-control-sm" type="number" name="calca" id="calca" placeholder="1x" value="2.2" min="1" step="0.1">
+                  </div>
+                  
+                  <!-- Botas -->
+                  <div class="form-check form-switch m-4">
+                    <input id="bota22" name="bota22" class="form-check-input" type="checkbox">
+                    <label class="form-check-label" for="bota22">Botas: </label>
+                    <input class="mult form-control-sm" type="number" name="bota" id="botas" placeholder="1x" value="2.2" min="1" step="0.1">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-md-12" style="margin: 0 25%;">
+              <div class="mt-5">
+                <div class="form-check form-switch mb-4">
+                  <input id="valorcompactado" name="valorcompactado" class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="valorcompactado">Exibir valor por pack compactado</label>
+                </div>
+                <div class="form-check form-switch mb-4">
+                  <input id="valorbau" name="valorbau" class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="valorbau">Exibir valor do baú duplo</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="mt-5">
+                <label for="total" class="form-label d-block text-center fs-3">Preço por pack:</label>
+                <input type="text" class="form-control w-50 text-center mx-auto border border-2 border-success fs-4" id="total" value="0" readonly>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="mt-auto text-white-50 text-center">
+      <p>NerdZone Calc, by <a href="https://github.com/FelipeVilas" class="text-white">FelipeVilas</a>.</p>
+    </footer>
+  </div>
+  
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    //multiplicadores do rank para minérios
+    const ranksMina = {
+      Porco: [1, 1.05, 1.10],
+      Ovelha: [1.15, 1.20, 1.25],
+      Vaca: [1.30, 1.35, 1.40],
+      Galinha: [1.46, 1.52, 1.58],
+      Coelho: [1.64, 1.70, 1.76],
+      Jaguatirica: [1.82, 1.88, 1.94],
+      Lobo: [2.01, 2.08, 2.15],
+      Zumbi: [2.22, 2.29, 2.36],
+      Aranha: [2.43, 2.50, 2.57],
+      Esqueleto: [2.65, 2.73, 2.81],
+      Creeper: [2.89, 2.97, 3.05],
+      Guardian: [3.13, 3.21, 3.29],
+      Golem: [3.38, 3.47, 3.56],
+      Blaze: [3.65, 3.74, 3.83],
+    };
+
+    //multiplicadores do rank para plantações
+    const ranksPlantacao = {
+      Porco: [1, 1.02, 1.04],
+      Ovelha: [1.06, 1.08, 1.10],
+      Vaca: [1.12, 1.14, 1.16],
+      Galinha: [1.19, 1.22, 1.25],
+      Coelho: [1.28, 1.31, 1.34],
+      Jaguatirica: [1.37, 1.40, 1.43],
+      Lobo: [1.47, 1.51, 1.55],
+      Zumbi: [1.59, 1.63, 1.67],
+      Aranha: [1.71, 1.75, 1.79],
+      Esqueleto: [1.84, 1.89, 1.94],
+      Creeper: [1.99, 2.04, 2.09],
+      Guardian: [2.14, 2.19, 2.24],
+      Golem: [2.30, 2.36, 2.42],
+      Blaze: [2.48, 2.54, 2.60],
+    };
+
+    const FORMATACAO = [
+      { valor: 1e3, sufixo: "K" },
+      { valor: 1e6, sufixo: "M" },
+      { valor: 1e9, sufixo: "B" },
+      { valor: 1e12, sufixo: "T" },
+      { valor: 1e15, sufixo: "Q" },
+      { valor: 1e18, sufixo: "Qi" }
+    ];
+
+    // Captura de elementos do DOM
+    const form = document.getElementById("calculadoraForm");
+    const selectRank = document.getElementById("rank");
+    const selectLevel = document.getElementById("ranklevel");
+    const selectItem = document.getElementById("item");
+    const selectBoosterVenda = document.getElementById("boostervenda");
+    const selectBoosterMina = document.getElementById("boostermina");
+    const inputTotal = document.getElementById("total");
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Inicialização de eventos do DOM
+    function inicializarEventos() {
+      // Evento ao mudar o rank
+      selectRank.addEventListener("change", atualizarNiveisRank);
+      
+      // Eventos para recalcular o preço
+      [selectRank, selectLevel, selectItem, selectBoosterVenda, selectBoosterMina].forEach(select => {
+        select.addEventListener("change", calcularPreco);
+      });
+      
+      // Eventos para checkboxes
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", calcularPreco);
+      });
+    }
+
+    function atualizarNiveisRank() {
+      const rankSelecionado = selectRank.value;
+      
+      selectLevel.innerHTML = '<option selected disabled>Selecione o Level</option>';
+      
+      if (rankSelecionado && ranksMina[rankSelecionado]) {
+        selectLevel.disabled = false;
+        
+        for (let i = 1; i <= 3; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.textContent = `Level ${i}`;
+          selectLevel.appendChild(option);
+        }
+      } else {
+        selectLevel.disabled = true;
+      }
+      
+      inputTotal.value = "0";
+    }
+
+    // Calcula o preço com base nos valores selecionados
+    function calcularPreco() {
+      const rank = selectRank.value;
+      const level = parseInt(selectLevel.value);
+      const precoBase = parseInt(selectItem.value);
+      
+      if (!rank || isNaN(level) || isNaN(precoBase)) {
+        return;
+      }
+      
+      const isPlantacao = selectItem.selectedOptions[0].parentElement.label === "Plantações";
+      
+      const multiplicadorRank = isPlantacao ? 
+        ranksPlantacao[rank][level - 1] : 
+        ranksMina[rank][level - 1];
+      
+      // Calcula o preço base com o multiplicador do rank
+      let precoFinal = precoBase * multiplicadorRank;
+      
+      // Aplica boosters (com fallback para 1 se não selecionado)
+      const boosterVenda = parseFloat(selectBoosterVenda.value) || 1;
+      const boosterMina = parseFloat(selectBoosterMina.value) || 1;
+      precoFinal *= boosterVenda * boosterMina;
+      
+      // Aplica multiplicadores do set
+      const multiplicadores = {
+        capa22: document.getElementById("capa22").checked ? parseFloat(document.getElementById("capacete").value) : 1,
+        peito24: document.getElementById("peito24").checked ? parseFloat(document.getElementById("peitoral").value) : 1,
+        calca22: document.getElementById("calca22").checked ? parseFloat(document.getElementById("calca").value) : 1,
+        bota22: document.getElementById("bota22").checked ? parseFloat(document.getElementById("botas").value) : 1
+      };
+      
+      for (const mult of Object.values(multiplicadores)) {
+        precoFinal *= mult;
+      }
+      
+      // Aplica multiplicador de pack compactado (x64) se a opção estiver marcada
+      if (document.getElementById("valorcompactado").checked) {
+        precoFinal *= 64;
+      }
+
+      //Aplica o valor do baú duplo se a opção estiver marcada
+      if (document.getElementById("valorbau").checked) {
+      precoFinal *= 54;
+
+    }
+      // Formata e exibe o preço final
+      inputTotal.value = formatarPreco(precoFinal);
+    }
+
+    // Formata números grandes com sufixos (K, M, B, etc.)
+    function formatarPreco(numero) {
+      if (numero < 1000) {
+        return numero.toLocaleString();
+      }
+      
+      for (let i = FORMATACAO.length - 1; i >= 0; i--) {
+        if (numero >= FORMATACAO[i].valor) {
+          const valorFormatado = (numero / FORMATACAO[i].valor).toFixed(2);
+          return valorFormatado + FORMATACAO[i].sufixo;
+        }
+      }
+      
+      // Fallback - não deveria chegar aqui, mas por precaução
+      return numero.toLocaleString();
+    }
+
+    // Inicializa os eventos quando o DOM estiver carregado
+    document.addEventListener("DOMContentLoaded", inicializarEventos);
+    const inputsMultiplicadores = document.querySelectorAll('.mult');
+    inputsMultiplicadores.forEach(input => {
+      input.addEventListener("change", calcularPreco);
+      input.addEventListener("input", calcularPreco);
+});
+  </script>
+</body>
+
+</html>
